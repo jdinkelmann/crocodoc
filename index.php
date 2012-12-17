@@ -37,4 +37,21 @@
 	}
 
 ?>
-<iframe src="<?php echo $frameUrl ?>" width="800px" height="650px" frameborder="0"></iframe>
+<body style="margin:0;">
+  <!--jQuery-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+
+  <!--docviewer.js-->
+  <script src="//static-v2.crocodoc.com/core/docviewer.js"></script>
+
+  <!--sets a global variable "_doc" that is needed for initialization-->
+  <script src="//crocodoc.com/webservice/document.js?session=<?php echo $sessionKey ?>"></script>
+
+  <!--div for viewer-->
+  <div id="DocViewer"></div>
+
+  <script type="text/javascript">
+    //creates a document viewer using the "DocViewer" div
+    var docviewer = new DocViewer({ "id": "DocViewer" });
+  </script>
+</body>
